@@ -1,0 +1,18 @@
+-alright, so we currently have the backend on our public html folder, which isn't ideal, bc that's where we want our website to go, so 
+let's move that to a mountain site backend, where we also want to include the function to ping the site every 30 mins to keep it from 
+sleeping
+-ok, so first, we want to test and make sure this is working,then we'll add the 30 min ping thing and make sure that works (we need an
+app name before we can do that, so create the app, then wait 30 mins and see if it pings itself, can we just send something when it 
+pings? that would help us make sure it is pinging? but I guess we'll know if the website works since it'll not take forever lol)
+-that's odd, it's just spinning the wheel and not doing anything, did we set up the backend right? this is really odd, it's not doing 
+anything, it seems to be kind of stuck, this is the beginning of our error message "status: 503,
+7:48:15 PM worker.1 |    statusText: 'Service Unavailable',
+7:48:15 PM worker.1 |    headers: {"
+-interesting, we can't seem to load our front end pages either, this is our front end page for reference "https://mighty-taiga-60726.
+herokuapp.com/". maybe we've exceeded some limit, if we did, that's pretty annoying... we can work on our front end only website if this
+is down, yeah, our engr site seems to be down too, very annoying, guess we'll have to work on the other website for now...
+-ok, so today , whcih is about 24 hours later, it seems to be working now, which is good obv, just temporarily down, so that's good, we
+didn't do something wrong is what we're happy about
+-for the ping thing, I think what we'll do, is just ping from the engr website (which is always on), we'll ping all of our other apps
+- ok, so now what... we can go to uptimebot and just delete all the monitors, then we can put this into the cloud
+- for uploading to cloud, we need to change from the local port to the heroku port, then add the files, commit, and push
