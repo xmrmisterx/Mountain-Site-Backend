@@ -21,11 +21,15 @@ var item_number = 0;
 var img_url = '';
 var query_str = '';
 
-// create function to ping server every 30 mins to prevent Heroku app from sleeping
+// create function to ping server every 30 mins to prevent Heroku app from sleeping (every 5 minutes is 300000 ms)
 
-// setInterval(function() {
-//   https.get("https://<your app name>.herokuapp.com");
-// }, 1800000); // every 5 minutes (300000)
+setInterval(function() {
+  https.get("https://warm-garden-39926.herokuapp.com");
+  https.get("https://mighty-taiga-60726.herokuapp.com");
+  https.get("https://dry-mesa-65447.herokuapp.com");
+  https.get("https://cryptic-dusk-31004.herokuapp.com");
+  https.get("https://arcane-wildwood-69561.herokuapp.com");
+}, 1800000);
 
 app.get('/:str', (req, res) => {
 
@@ -35,13 +39,10 @@ app.get('/:str', (req, res) => {
     try {
       const response = await axios.get("https://en.wikipedia.org/w/api.php?action=query&prop=pageprops&titles=" + query_str + "&format=json&formatversion=2");
       item_number = response.data.query.pages[0].pageprops.wikibase_item;
-      // console.log("item number right after get request response:", item_number);
 
     } catch (error) {
       console.log(error.response);
     }
-
-    // console.log("item number outside get request response after setting value:", item_number);
 
     try {
       const response = await axios.get("https://www.wikidata.org/w/api.php?action=wbgetclaims&property=P18&entity=" + item_number + "&format=json");

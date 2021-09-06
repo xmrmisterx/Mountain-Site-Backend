@@ -15,4 +15,13 @@ is down, yeah, our engr site seems to be down too, very annoying, guess we'll ha
 didn't do something wrong is what we're happy about
 -for the ping thing, I think what we'll do, is just ping from the engr website (which is always on), we'll ping all of our other apps
 - ok, so now what... we can go to uptimebot and just delete all the monitors, then we can put this into the cloud
-- for uploading to cloud, we need to change from the local port to the heroku port, then add the files, commit, and push
+- for uploading to cloud, we need to change from the local port to the heroku port, then add the files, commit, and push, once again,
+that's "git init" "git add ." "git commit -m [commit message]" "git push [app git address] master"
+- ok, so we did all the git thing, but we don't have a git address yet? yeah, I think we forgot a step, to create heroku, to create an
+app first, which is "heroku create" after we log in with "heroku login -i" and put in our email and school password
+- *** ok, so we did that, and our APP ADDRESS is: https://dry-mesa-65447.herokuapp.com/ and our APP GIT ADDRESS is: 
+https://git.heroku.com/dry-mesa-65447.git 
+- yep, so we do all that, then to put the app into the cloud "git push [app git address] master", and the build was successful. we test
+it for "denali" and "K2" get requests and it works, so, now let's go back to our front end, and send the GET requests here, instead of
+to the other one
+- ok, so changed our frontend app to call this backend app for the get requests, so I think this mountain website if finally working like we want it to, independent of the engr site
