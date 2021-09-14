@@ -28,11 +28,7 @@ var query_str = '';
 // create function to ping server every 30 mins to prevent Heroku app from sleeping (every 5 minutes is 300000 ms)
 
 setInterval(function() {
-  https.get("https://warm-garden-39926.herokuapp.com");
-  https.get("https://mighty-taiga-60726.herokuapp.com");
-  https.get("https://dry-mesa-65447.herokuapp.com");
   https.get("https://cryptic-dusk-31004.herokuapp.com");
-  https.get("https://arcane-wildwood-69561.herokuapp.com");
 }, 1800000);
 
 app.get('/:str', (req, res) => {
@@ -65,20 +61,6 @@ app.get('/:str', (req, res) => {
         }
         processed_image_name += curr_letter;
       }
-
-      // get md5 hash string from processed image name
-
-      let hash_str = crypto.createHash('md5').update(processed_image_name).digest('hex');
-
-      // create image url from hash string and image name
-
-      // "a" is the first character of the hash string
-
-      let a = hash_str.charAt(0);
-
-      // "b" is the second character of the hast string
-
-      let b = hash_str.charAt(1);
 
       // create image url in this format: https://upload.wikimedia.org/wikipedia/commons/a/ab/image_name
 
